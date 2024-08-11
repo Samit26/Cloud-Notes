@@ -65,7 +65,7 @@ const StoreProvider = ({ children }) => {
     // }
     if ((auth !== "" && state.notes.length === 0) || fetchNotes) {
       setLoading("true");
-      fetch("http://localhost:3000/fetchnotes", {
+      fetch("https://cloud-notes-server.vercel.app/fetchnotes", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ const StoreProvider = ({ children }) => {
     console.log("createNotes is called", data1);
     setLoading("true");
     setFetchNotes(true);
-    fetch("http://localhost:3000/createnotes", {
+    fetch("https://cloud-notes-server.vercel.app/createnotes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ const StoreProvider = ({ children }) => {
   const deleteNotes = (id) => {
     setLoading("true");
     setFetchNotes(true);
-    fetch(`http://localhost:3000/deletenote/${id}`, {
+    fetch(`https://cloud-notes-server.vercel.app/deletenote/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

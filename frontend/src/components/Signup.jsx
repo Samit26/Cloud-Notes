@@ -29,7 +29,7 @@ const Signup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoadingValue("75%");
-    fetch("http://localhost:3000/api/auth/signup", {
+    fetch("https://cloud-notes-server.vercel.app/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Signup = () => {
 
     setLoadingValue("25%");
     setTimeout(() => setLoadingValue("75%"), 200);
-    fetch("http://localhost:3000/api/auth/login", {
+    fetch("https://cloud-notes-server.vercel.app/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(inputsLogin),
